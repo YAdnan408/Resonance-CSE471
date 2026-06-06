@@ -126,6 +126,7 @@ const addToCart = async (productId) => {
               <input
                 type="text"
                 placeholder="Search products..."
+                aria-label="Search products"
                 value={searchQuery}
                 onChange={handleSearchChange}
                 className="w-full p-3 border rounded-md text-base bg-white/10 text-white placeholder-white/60 border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500"

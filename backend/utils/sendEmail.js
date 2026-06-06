@@ -1,6 +1,14 @@
 // utils/sendEmail.js
 import nodemailer from 'nodemailer';
 
+/**
+ * Utility function to send emails using nodemailer.
+ * 
+ * @param {string} to - Recipient email address.
+ * @param {string} subject - Email subject line.
+ * @param {string} text - Plain text email content.
+ * @returns {Promise<Object>} - The nodemailer info object.
+ */
 const sendEmail = async (to, subject, text) => {
   try {
     // Create transporter

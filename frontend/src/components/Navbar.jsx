@@ -24,7 +24,7 @@ const Navbar = () => {
   const isAdmin = user?.role === 'admin';
 
   return (
-    <nav className="flex justify-between items-center px-8 py-4 bg-black/80 text-white shadow-md">
+    <nav className="flex justify-between items-center px-8 py-4 bg-black/90 text-white shadow-md">
       <div className="text-2xl font-bold cursor-pointer" onClick={handleBrandClick}>
         Resonance
       </div>

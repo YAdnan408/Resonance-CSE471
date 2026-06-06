@@ -321,6 +321,13 @@ export const refreshToken = async (req, res) => {
   }
 };
 
+/**
+ * Resends the email verification link to a user.
+ * 
+ * @param {Object} req - Express request object containing user email.
+ * @param {Object} res - Express response object.
+ * @returns {Promise<void>}
+ */
 export const resendVerificationEmail = async (req, res) => {
   try {
     const { email } = req.body;

@@ -53,7 +53,7 @@ export const getAllInstruments = async (req, res) => {
       query.type = type;
     }
     
-    const instruments = await Instrument.find(query).sort({ createdAt: -1 });
+    const instruments = await Instrument.find(query).sort({ createdAt: -1 }).lean();
     
     res.status(200).json({
       success: true,

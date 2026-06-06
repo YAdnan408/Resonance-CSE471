@@ -33,8 +33,8 @@ const sendEmail = async (to, subject, text) => {
     console.log(`Email sent: ${info.messageId}`);
     return info;
   } catch (error) {
-    console.error('Email sending error:', error);
-    throw new Error('Failed to send email');
+    console.error(`[Email Service Error] Failed to send email to: ${to}. Subject: "${subject}". Error Details:`, error);
+    throw new Error(`Failed to send email to ${to}`);
   }
 };
 

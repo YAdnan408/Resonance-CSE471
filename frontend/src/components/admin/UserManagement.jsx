@@ -64,12 +64,12 @@ const UserManagement = () => {
           <table className="min-w-full border border-gray-700">
             <thead className="bg-gray-800">
               <tr>
-                <th className="py-2 px-4 border-b border-gray-700 text-left">Name</th>
-                <th className="py-2 px-4 border-b border-gray-700 text-left">Email</th>
-                <th className="py-2 px-4 border-b border-gray-700 text-left">Role</th>
-                <th className="py-2 px-4 border-b border-gray-700 text-left">Status</th>
-                <th className="py-2 px-4 border-b border-gray-700 text-left">Created At</th>
-                <th className="py-2 px-4 border-b border-gray-700 text-left">Actions</th>
+                <th className="py-2 px-4 border-b border-gray-700 text-left font-bold uppercase text-xs tracking-wider text-gray-300">Name</th>
+                <th className="py-2 px-4 border-b border-gray-700 text-left font-bold uppercase text-xs tracking-wider text-gray-300">Email</th>
+                <th className="py-2 px-4 border-b border-gray-700 text-left font-bold uppercase text-xs tracking-wider text-gray-300">Role</th>
+                <th className="py-2 px-4 border-b border-gray-700 text-left font-bold uppercase text-xs tracking-wider text-gray-300">Status</th>
+                <th className="py-2 px-4 border-b border-gray-700 text-left font-bold uppercase text-xs tracking-wider text-gray-300">Created At</th>
+                <th className="py-2 px-4 border-b border-gray-700 text-left font-bold uppercase text-xs tracking-wider text-gray-300">Actions</th>
               </tr>
             </thead>
             <tbody>

@@ -176,7 +176,8 @@ export const getProducts = async (req, res) => {
     const products = await Product.find(filter)
       .sort(sortOption)
       .skip(skip)
-      .limit(limitNum);
+      .limit(limitNum)
+      .lean();
     
     // Get total count for pagination
     const total = await Product.countDocuments(filter);

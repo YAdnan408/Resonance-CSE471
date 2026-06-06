@@ -204,7 +204,13 @@ export const forgotPassword = async (req, res) => {
   }
 };
 
-// Reset password
+/**
+ * Resets a user's password using a reset token.
+ * 
+ * @param {Object} req - Express request object containing token and new password.
+ * @param {Object} res - Express response object.
+ * @returns {Promise<void>}
+ */
 export const resetPassword = async (req, res) => {
   try {
     const { token, password } = req.body;

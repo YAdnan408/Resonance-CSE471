@@ -31,25 +31,25 @@ const Navbar = () => {
       <div className="flex gap-4">
         <button
           onClick={() => navigate('/about')}
-          className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+          className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
         >
           About
         </button>
         <button
           onClick={() => navigate('/booking')}
-          className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+          className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
         >
           Book Now
         </button>
         <button
           onClick={() => navigate('/products')}
-          className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+          className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
         >
           Purchase
         </button>
         <button
         onClick={() => navigate('/users/rentals')}
-        className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+        className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
         >
         Rentals
         </button>
@@ -57,7 +57,7 @@ const Navbar = () => {
         {isAuthenticated && isArtist && (
           <button
             onClick={() => navigate('/collaboration')}
-            className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+            className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
           >
             Collaboration Hub
           </button>
@@ -67,7 +67,7 @@ const Navbar = () => {
         {isAuthenticated && isAdmin && (
           <button
             onClick={() => navigate('/admin')}
-            className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+            className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
           >
             Admin Dashboard
           </button>
@@ -77,13 +77,13 @@ const Navbar = () => {
           <>
             <button
               onClick={() => navigate('/login')}
-              className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+              className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
             >
               Login
             </button>
             <button
               onClick={() => navigate('/signup')}
-              className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+              className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
             >
               Sign Up
             </button>
@@ -92,13 +92,13 @@ const Navbar = () => {
           <>
             <button
               onClick={() => navigate('/profile')}
-              className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+              className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
             >
               {user?.name || 'Profile'}
             </button>
             <button
               onClick={handleLogout}
-              className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-105"
+              className="bg-transparent border-none text-white text-base cursor-pointer px-4 py-2 transition-all duration-300 hover:text-purple-400 hover:scale-103"
             >
               Logout
             </button>

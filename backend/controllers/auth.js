@@ -166,7 +166,13 @@ export const verifyEmail = async (req, res) => {
   }
 };
 
-// Forgot password
+/**
+ * Initiates the password reset process by sending a reset email.
+ * 
+ * @param {Object} req - Express request object containing user email.
+ * @param {Object} res - Express response object.
+ * @returns {Promise<void>}
+ */
 export const forgotPassword = async (req, res) => {
   try {
     const { email } = req.body;

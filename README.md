@@ -34,26 +34,31 @@ Resonance is a comprehensive music platform designed to provide a "one-stop-shop
    ```
 
 2. **Configure Environment Variables:**
-   Create a `.env` file in the root directory (or appropriate folders if specified) and add your database URI, JWT secrets, and any other required configurations:
+   Create a `.env` file in the root directory and add your database URI, JWT secrets, and any other required configurations:
    ```env
    MONGO_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret
    # ... other required variables
    ```
 
-3. **Install Dependencies and Run:**
+3. **Install Dependencies:**
+   ```bash
+   npm install
+   cd frontend
+   npm install
+   cd ..
+   ```
+
+4. **Run the Project:**
 
    **Backend:**
    ```bash
-   cd backend
-   npm install
-   npm start
+   npm run dev
    ```
 
-   **Frontend:**
+   **Frontend (in a separate terminal):**
    ```bash
-   cd ../frontend
-   npm install
+   cd frontend
    npm run dev
    ```
 

@@ -169,14 +169,14 @@ export const getProducts = async (req, res) => {
     
     // Calculate pagination, ensuring valid integers
     const pageNum = parseInt(page);
-    const limitNum = parseInt(limit);
-    const skip = (pageNum - 1) * limitNum;
+    const limitValue = parseInt(limit);
+    const skip = (pageNum - 1) * limitValue;
     
     // Execute query
     const products = await Product.find(filter)
       .sort(sortOption)
       .skip(skip)
-      .limit(limitNum)
+      .limit(limitValue)
       .lean();
     
     // Get total count for pagination
@@ -188,8 +188,8 @@ export const getProducts = async (req, res) => {
       pagination: {
         total,
         page: pageNum,
-        limit: limitNum,
-        pages: Math.ceil(total / limitNum)
+        limit: limitValue,
+        pages: Math.ceil(total / limitValue)
       }
     });
   } catch (error) {

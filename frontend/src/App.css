@@ -52,3 +52,11 @@ h3 {
   font-size: 1.5rem;
 }
 
+button, a {
+  cursor: pointer;
+}
+
+button {
+  padding: 0.5rem 1rem;
+}
+

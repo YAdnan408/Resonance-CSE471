@@ -267,7 +267,13 @@ export const logout = async (req, res) => {
   }
 };
 
-// Refresh token
+/**
+ * Generates a new access token using a valid refresh token.
+ * 
+ * @param {Object} req - Express request object containing refreshToken.
+ * @param {Object} res - Express response object.
+ * @returns {Promise<void>}
+ */
 export const refreshToken = async (req, res) => {
   try {
     const { refreshToken } = req.body;

@@ -139,7 +139,13 @@ export const login = async (req, res) => {
   }
 };
 
-// Verify email
+/**
+ * Verifies a user's email address using a token.
+ * 
+ * @param {Object} req - Express request object containing verification token.
+ * @param {Object} res - Express response object.
+ * @returns {Promise<void>}
+ */
 export const verifyEmail = async (req, res) => {
   try {
     const { token } = req.body;

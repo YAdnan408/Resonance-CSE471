@@ -93,13 +93,6 @@ export const login = async (req, res) => {
       return res.status(400).json({ message: 'Invalid credentials' });
     } 
 
-    // Check if email is verified
-    // if (!user.isEmailVerified) {
-    //   console.log("Email not verified:", !user.isEmailVerified);
-    //   return res.status(400).json({ message: 'Please verify your email before logging in' });
-    // }
-    // console.log("Email verified:", user.isEmailVerified);
-
     // Generate JWT tokens
     const accessToken = jwt.sign(
       { userId: user._id, role: user.role },
@@ -189,7 +182,6 @@ export const forgotPassword = async (req, res) => {
     await user.save();
 
     // Send reset email
-    console.log(process.env.CLIENT_URL);
     const resetUrl = `${process.env.CLIENT_URL}/reset-password?token=${resetToken}`;
     await sendEmail(
       email,

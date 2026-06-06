@@ -251,7 +251,7 @@ const StudioDetail = () => {
                                 <div className="rounded-lg overflow-hidden h-64">
                                     <img
                                         src={`http://127.0.0.1:5000${studio.images[0]}`}
-                                        alt={studio.name}
+                                        alt={`Studio: ${studio.name}`}
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -262,13 +262,13 @@ const StudioDetail = () => {
                             )}
                         </div>
 
-                        <div className="mb-6">
-                            <h2 className="text-xl font-bold mb-2">Description</h2>
+                        <div className="mb-8">
+                            <h2 className="text-xl font-bold mb-4">Description</h2>
                             <p className="text-gray-300">{studio.description}</p>
                         </div>
 
-                        <div className="mb-6">
-                            <h2 className="text-xl font-bold mb-2">Amenities</h2>
+                        <div className="mb-8">
+                            <h2 className="text-xl font-bold mb-4">Amenities</h2>
                             {studio.amenities && studio.amenities.length > 0 ? (
                                 <div className="flex flex-wrap gap-2">
                                     {studio.amenities.map((amenity, index) => (
@@ -285,8 +285,8 @@ const StudioDetail = () => {
                             )}
                         </div>
 
-                        <div className="mb-6">
-                            <h2 className="text-xl font-bold mb-2">Details</h2>
+                        <div className="mb-8">
+                            <h2 className="text-xl font-bold mb-4">Details</h2>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <p className="text-gray-400 text-sm">Hourly Rate</p>
@@ -302,17 +302,17 @@ const StudioDetail = () => {
 
                     {/* Booking Form */}
                     <div className="w-full md:w-1/2 bg-gray-800 p-6 rounded-lg">
-                        <h2 className="text-2xl font-bold mb-4">Book This {studio.type === 'practice' ? 'Practice Room' : 'Studio'}</h2>
+                        <h2 className="text-2xl font-bold mb-6">Book This {studio.type === 'practice' ? 'Practice Room' : 'Studio'}</h2>
 
                         {bookingError && (
-                            <div className="bg-red-900/30 border border-red-500 text-white p-4 rounded-md mb-4">
+                            <div className="bg-red-900/30 border border-red-500 text-white p-4 rounded-md mb-6">
                                 {bookingError}
                             </div>
                         )}
 
                         <form onSubmit={handleBookingSubmit}>
-                            <div className="mb-4">
-                                <label htmlFor="date" className="block text-sm font-medium mb-2">
+                            <div className="mb-6">
+                                <label htmlFor="date" className="block text-sm font-medium mb-4">
                                     Select Date
                                 </label>
                                 <input
@@ -327,8 +327,8 @@ const StudioDetail = () => {
                                 />
                             </div>
 
-                            <div className="mb-4">
-                                <label className="block text-sm font-medium mb-2">
+                            <div className="mb-6">
+                                <label className="block text-sm font-medium mb-4">
                                     Select Start Time
                                 </label>
                                 <div className="grid grid-cols-4 gap-2">
@@ -357,8 +357,8 @@ const StudioDetail = () => {
                             </div>
 
                             {selectedStartTime && (
-                                <div className="mb-4">
-                                    <label className="block text-sm font-medium mb-2">
+                                <div className="mb-6">
+                                    <label className="block text-sm font-medium mb-4">
                                         Select End Time
                                     </label>
                                     <div className="grid grid-cols-4 gap-2">
@@ -389,7 +389,7 @@ const StudioDetail = () => {
 
                             {selectedStartTime && selectedEndTime && (
                                 <div className="mb-6 p-4 bg-gray-700 rounded-md">
-                                    <h3 className="text-lg font-bold mb-2">Booking Summary</h3>
+                                    <h3 className="text-lg font-bold mb-4">Booking Summary</h3>
                                     <div className="grid grid-cols-2 gap-4 mb-4">
                                         <div>
                                             <p className="text-gray-400 text-sm">Date</p>
@@ -414,7 +414,7 @@ const StudioDetail = () => {
                             )}
 
                             <div className="mb-6">
-                                <label htmlFor="notes" className="block text-sm font-medium mb-2">
+                                <label htmlFor="notes" className="block text-sm font-medium mb-4">
                                     Additional Notes (Optional)
                                 </label>
                                 <textarea

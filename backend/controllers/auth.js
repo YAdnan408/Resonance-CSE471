@@ -5,7 +5,13 @@ import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import sendEmail from '../utils/sendEmail.js';
 
-// Register a new user
+/**
+ * Registers a new user in the system.
+ * 
+ * @param {Object} req - Express request object containing name, email, password, and role in body.
+ * @param {Object} res - Express response object.
+ * @returns {Promise<void>}
+ */
 export const register = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;

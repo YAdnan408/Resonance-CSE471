@@ -290,7 +290,7 @@ export const refreshToken = async (req, res) => {
       const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
       
       // Find user
-      const user = await User.findById(decoded.userId);
+      const user = await User.findById(decoded.userId).lean();
       if (!user || !user.isActive) {
         return res.status(403).json({ message: 'User not found or account restricted' });
       }

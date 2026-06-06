@@ -204,7 +204,7 @@ export const createBooking = async (req, res) => {
           endTime: { $lte: endTime }
         }
       ]
-    });
+    }).lean();
     
     if (conflictingBookings.length > 0) {
       return res.status(400).json({
@@ -287,7 +287,8 @@ export const getUserBookings = async (req, res) => {
     
     const bookings = await Booking.find({ user: userId })
       .populate('studio', 'name type location hourlyRate')
-      .sort({ date: -1, startTime: 1 });
+      .sort({ date: -1, startTime: 1 })
+      .lean();
     
     res.status(200).json({
       success: true,
@@ -570,7 +571,8 @@ export const getAllBookings = async (req, res) => {
     const bookings = await Booking.find(query)
       .populate('studio', 'name type location hourlyRate')
       .populate('user', 'name email')
-      .sort({ date: -1, startTime: 1 });
+      .sort({ date: -1, startTime: 1 })
+      .lean();
     
     res.status(200).json({
       success: true,

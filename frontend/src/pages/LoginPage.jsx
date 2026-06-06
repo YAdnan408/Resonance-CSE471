@@ -104,7 +104,7 @@ const LoginPage = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`p-3 border rounded-md text-base bg-white/10 text-white placeholder-white/60 ${
+                className={`p-3 border rounded-md text-base bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 ${
                   errors.email ? 'border-red-500' : 'border-white/30'
                 }`}
                 placeholder="Enter your email"
@@ -121,7 +121,7 @@ const LoginPage = () => {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`p-3 border rounded-md text-base bg-white/10 text-white placeholder-white/60 ${
+                className={`p-3 border rounded-md text-base bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 ${
                   errors.password ? 'border-red-500' : 'border-white/30'
                 }`}
                 placeholder="Enter your password"

@@ -25,11 +25,14 @@ const Cart = () => {
         <Navbar />
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold text-white mb-8">Your Cart</h1>
-          <div className="bg-black/70 backdrop-blur-md p-8 rounded-lg border border-white/20 text-center">
-            <FaShoppingCart className="mx-auto text-5xl text-white/50 mb-4" />
-            <p className="text-white/70 mb-6">Your cart is empty</p>
-            <Link to="/shop" className="inline-block bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-md">
-              Browse Products
+          <div className="bg-black/70 backdrop-blur-md p-12 rounded-2xl border border-white/20 text-center flex flex-col items-center">
+            <div className="w-24 h-24 bg-purple-900/30 rounded-full flex items-center justify-center mb-6">
+              <FaShoppingCart className="text-4xl text-purple-400" />
+            </div>
+            <h2 className="text-2xl font-bold mb-2">Your cart is empty</h2>
+            <p className="text-white/60 mb-8 max-w-sm">Looks like you haven't added anything to your cart yet. Explore our products and find something you love!</p>
+            <Link to="/products" className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-8 rounded-full transition-all">
+              Start Shopping
             </Link>
           </div>
         </div>

@@ -93,7 +93,7 @@ const SignupPage = () => {
                   name={field}
                   value={formData[field]}
                   onChange={handleChange}
-                  className={`p-3 border rounded-md text-base bg-white/10 text-white placeholder-white/60 ${
+                  className={`p-3 border rounded-md text-base bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 ${
                     errors[field] ? 'border-red-500' : 'border-white/30'
                   }`}
                   placeholder={`Enter your ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`}
@@ -115,7 +115,7 @@ const SignupPage = () => {
                   name={field}
                   value={formData[field]}
                   onChange={handleChange}
-                  className={`p-3 border rounded-md text-base bg-white/10 text-white placeholder-white/60 ${
+                  className={`p-3 border rounded-md text-base bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 ${
                     errors[field] ? 'border-red-500' : 'border-white/30'
                   }`}
                   placeholder={`Enter ${field === 'confirmPassword' ? 'again' : ''}`}

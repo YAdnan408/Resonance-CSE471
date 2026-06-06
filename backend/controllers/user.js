@@ -184,7 +184,8 @@ export const getProfile = async (req, res) => {
 // Update user profile
 export const updateProfile = async (req, res) => {
   try {
-    const { name, email } = req.body;
+    const { name } = req.body;
+    const email = req.body.email ? req.body.email.trim() : req.body.email;
     
     // Find user
     let user = await User.findById(req.user.userId);
@@ -273,7 +274,7 @@ export const changePassword = async (req, res) => {
 // Send invitation
 export const sendInvitation = async (req, res) => {
   try {
-    const { email } = req.body;
+    const email = req.body.email ? req.body.email.trim() : req.body.email;
     
     // Check if email already registered
     const existingUser = await User.findOne({ email });

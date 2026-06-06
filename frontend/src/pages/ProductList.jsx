@@ -225,7 +225,7 @@ const addToCart = async (productId) => {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {products.map(product => (
-                <div key={product._id} className="bg-black/70 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/30 transition-transform hover:scale-105">
+                <div key={product._id} className="mb-6 bg-black/70 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/30 transition-transform hover:scale-105">
                   <a href={`/products/${product._id}`}>
                     <img 
                       src={`http://127.0.0.1:5000${product.images[0]}`} 

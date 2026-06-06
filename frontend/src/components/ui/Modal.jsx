@@ -27,7 +27,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
       ></div>
       
       {/* Modal content */}
-      <div className="relative bg-gray-900 rounded-lg w-full max-w-md mx-4 z-10 shadow-xl">
+      <div className="relative bg-gray-900 rounded-lg w-full max-w-md mx-4 z-10 shadow-xl" style={{ borderRadius: '12px' }}>
         <div className="flex justify-between items-center border-b border-white/10 p-4">
           <h3 className="text-lg font-medium">{title}</h3>
           <button 

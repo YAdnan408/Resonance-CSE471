@@ -61,7 +61,6 @@ export const register = async (req, res) => {
 
 // Login user
 export const login = async (req, res) => {
-  console.log('Login function called');
   try {
     const { email, password } = req.body;
 
@@ -70,20 +69,17 @@ export const login = async (req, res) => {
     if (!user) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
-    console.log("User found:", user);
 
     // Check if user is active
     if (!user.isActive) {
       return res.status(403).json({ message: 'Account has been restricted. Please contact admin.' });
     }
-    console.log("User is active:", user.isActive);
 
     // Check if password is correct
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid credentials' });
     } 
-    console.log("Password matched:", isMatch);
 
     // Check if email is verified
     // if (!user.isEmailVerified) {

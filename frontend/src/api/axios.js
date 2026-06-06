@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+/**
+ * Axios instance configured with base URL and default headers.
+ * This instance is used for all API calls in the application.
+ */
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
   headers: {
@@ -7,7 +11,10 @@ const api = axios.create({
   },
 });
 
-// Request interceptor to add the auth token
+/**
+ * Request interceptor to automatically attach the access token to the Authorization header
+ * if it exists in localStorage.
+ */
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('accessToken');
@@ -23,6 +30,12 @@ api.interceptors.request.use(
 let isRefreshing = false;
 let failedQueue = [];
 
+/**
+ * Processes the queue of failed requests during a token refresh operation.
+ * 
+ * @param {Error|null} error - The error encountered during refresh, if any.
+ * @param {string|null} token - The new access token, if refresh was successful.
+ */
 const processQueue = (error, token = null) => {
   failedQueue.forEach(prom => {
     if (error) {
@@ -35,6 +48,11 @@ const processQueue = (error, token = null) => {
   failedQueue = [];
 };
 
+/**
+ * Response interceptor to handle automated token refreshing.
+ * If a 401 Unauthorized response is received, it attempts to use the refresh token
+ * to obtain a new access token and then retries the original request.
+ */
 api.interceptors.response.use(
   (response) => response,
   async (error) => {

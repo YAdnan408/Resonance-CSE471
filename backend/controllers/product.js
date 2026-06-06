@@ -167,7 +167,7 @@ export const getProducts = async (req, res) => {
         sortOption = { createdAt: -1 };
     }
     
-    // Calculate pagination
+    // Calculate pagination, ensuring valid integers
     const pageNum = parseInt(page);
     const limitNum = parseInt(limit);
     const skip = (pageNum - 1) * limitNum;

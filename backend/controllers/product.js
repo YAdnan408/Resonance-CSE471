@@ -95,7 +95,7 @@ export const deleteProductComment = async (req, res) => {
     
     await Comment.findByIdAndDelete(commentId);
     
-    res.status(200).json({ message: 'Comment deleted successfully' });
+    res.status(200).json({ message: 'Product comment deleted successfully' });
   } catch (error) {
     console.error('Failed to delete product comment:', error);
     res.status(500).json({ message: 'Server error' });

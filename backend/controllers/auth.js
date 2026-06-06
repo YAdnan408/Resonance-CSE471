@@ -238,7 +238,13 @@ export const resetPassword = async (req, res) => {
   }
 };
 
-// Logout
+/**
+ * Logs out a user by blacklisting their refresh token.
+ * 
+ * @param {Object} req - Express request object containing refreshToken.
+ * @param {Object} res - Express response object.
+ * @returns {Promise<void>}
+ */
 export const logout = async (req, res) => {
   try {
     const { refreshToken } = req.body;

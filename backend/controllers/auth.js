@@ -7,10 +7,8 @@ import sendEmail from '../utils/sendEmail.js';
 
 // Register a new user
 export const register = async (req, res) => {
-  console.log('Received request to register a new user'); 
   try {
     const { name, email, password, role } = req.body;
-    console.log('Received request body:', req.body);
 
     // Check if user already exists
     let user = await User.findOne({ email });
@@ -28,15 +26,11 @@ export const register = async (req, res) => {
 
     // Hash password
     const salt = await bcrypt.genSalt(10);
-    console.log('Password received:', password);
-console.log('Password type:', typeof password);
     const hashedPassword = await bcrypt.hash(password, salt);
-    console.log('Hashed password:', hashedPassword);
 
     // Create verification token
-    console.log('Generating email verification token...');
     const emailVerificationToken = crypto.randomBytes(32).toString('hex');
-    console.log('Email verification token:', emailVerificationToken);
+    
     // Create new user
     user = new User({
       name,

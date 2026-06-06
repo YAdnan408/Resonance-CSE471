@@ -14,7 +14,10 @@ import sendEmail from '../utils/sendEmail.js';
  */
 export const register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const name = req.body.name?.trim();
+    const email = req.body.email?.trim();
+    const password = req.body.password; // Don't trim password as it might contain valid spaces
+    const role = req.body.role?.trim();
 
     // Check if user already exists
     let user = await User.findOne({ email });

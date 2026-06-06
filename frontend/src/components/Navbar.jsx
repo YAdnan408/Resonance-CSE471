@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center px-8 py-4 bg-black/90 text-white shadow-md">
-      <div className="text-2xl font-bold cursor-pointer" onClick={handleBrandClick}>
+      <div className="text-2xl font-bold cursor-pointer mr-4" onClick={handleBrandClick}>
         Resonance
       </div>
       <div className="flex gap-4">

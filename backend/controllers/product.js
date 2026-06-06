@@ -212,7 +212,7 @@ export const getProductById = async (req, res) => {
     if (!product) {
       return res.status(404).json({
         success: false,
-        message: 'Product not found'
+        message: 'Requested product does not exist'
       });
     }
     

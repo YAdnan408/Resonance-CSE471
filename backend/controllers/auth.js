@@ -65,7 +65,13 @@ export const register = async (req, res) => {
 
 
 
-// Login user
+/**
+ * Authenticates a user and returns access and refresh tokens.
+ * 
+ * @param {Object} req - Express request object containing email and password.
+ * @param {Object} res - Express response object.
+ * @returns {Promise<void>}
+ */
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;

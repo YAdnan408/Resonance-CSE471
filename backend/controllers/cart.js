@@ -40,7 +40,8 @@ export const addToCart = async (req, res) => {
   console.log('addToCart function called');
   try {
     const userId = req.user.userId;
-    const { productId, quantity = 1 } = req.body;
+    const { productId: rawProductId, quantity = 1 } = req.body;
+    const productId = rawProductId?.trim();
     
     // Validate product exists
     const product = await Product.findById(productId);
@@ -129,7 +130,8 @@ export const addToCart = async (req, res) => {
 export const updateCartItem = async (req, res) => {
   try {
     const userId = req.user.userId;
-    const { productId, quantity } = req.body;
+    const { productId: rawProductId, quantity } = req.body;
+    const productId = rawProductId?.trim();
     
     if (!productId || !quantity || quantity < 1) {
       return res.status(400).json({
@@ -211,7 +213,8 @@ export const updateCartItem = async (req, res) => {
       export const removeCartItem = async (req, res) => {
         try {
           const userId = req.user.userId;
-          const { productId } = req.params;
+          const { productId: rawProductId } = req.params;
+          const productId = rawProductId?.trim();
           
           // Find user's cart
           const cart = await Cart.findOne({ user: userId });
